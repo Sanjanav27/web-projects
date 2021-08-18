@@ -127,49 +127,49 @@
         //                 }
         //         }
 
-                function getMediaPosters(selectedGenre){
-                        var countMovies = 0; 
-                        var mediaCarouselMovies;            
-                        currentGenre = selectedGenre;                                              
-                        document.getElementById("genreText").innerHTML = selectedGenre;
+      function getMediaPosters(selectedGenre){
+              var countMovies = 0; 
+              var mediaCarouselMovies;            
+              currentGenre = selectedGenre;                                              
+              document.getElementById("genreText").innerHTML = selectedGenre;
 
-                        if(selectedGenre == 'All'){
-                            document.getElementsByClassName('movies-action')[0].style.display="block";    
-                            document.getElementsByClassName('movies-action')[0].style.display="block";
-                            document.getElementsByClassName('movies-drama')[0].style.display="block";
-                            document.getElementsByClassName('movies-scifi')[0].style.display="block";  
-                            mediaCarouselMovies = document.getElementsByClassName("media-carousel-movies");                             
-                        }
-                        if(selectedGenre == 'Action'){
-                            document.getElementsByClassName('movies-action')[0].style.display="block";
-                            document.getElementsByClassName('movies-drama')[0].style.display="none";
-                            document.getElementsByClassName('movies-scifi')[0].style.display="none";
-                            mediaCarouselMovies = document.getElementsByClassName('movies-action')[0].getElementsByClassName("media-carousel-movies");                           
-                        }
-                        if(selectedGenre == 'Drama'){
-                            document.getElementsByClassName('movies-action')[0].style.display="none";
-                            document.getElementsByClassName('movies-drama')[0].style.display="block";                            
-                            document.getElementsByClassName('movies-scifi')[0].style.display="none"; 
-                            mediaCarouselMovies = document.getElementsByClassName('movies-drama')[0].getElementsByClassName("media-carousel-movies");                               
-                        }
-                        if(selectedGenre == 'Sci-Fi'){
-                            document.getElementsByClassName('movies-action')[0].style.display="none";
-                            document.getElementsByClassName('movies-drama')[0].style.display="none";
-                            document.getElementsByClassName('movies-scifi')[0].style.display="block";
-                            mediaCarouselMovies = document.getElementsByClassName('movies-scifi')[0].getElementsByClassName("media-carousel-movies");
-                        }                        
+              if(selectedGenre == 'All'){
+                  document.getElementsByClassName('movies-action')[0].style.display="block";    
+                  document.getElementsByClassName('movies-action')[0].style.display="block";
+                  document.getElementsByClassName('movies-drama')[0].style.display="block";
+                  document.getElementsByClassName('movies-scifi')[0].style.display="block";  
+                  mediaCarouselMovies = document.getElementsByClassName("media-carousel-movies");                             
+              }
+              if(selectedGenre == 'Action'){
+                  document.getElementsByClassName('movies-action')[0].style.display="block";
+                  document.getElementsByClassName('movies-drama')[0].style.display="none";
+                  document.getElementsByClassName('movies-scifi')[0].style.display="none";
+                  mediaCarouselMovies = document.getElementsByClassName('movies-action')[0].getElementsByClassName("media-carousel-movies");                           
+              }
+              if(selectedGenre == 'Drama'){
+                  document.getElementsByClassName('movies-action')[0].style.display="none";
+                  document.getElementsByClassName('movies-drama')[0].style.display="block";                            
+                  document.getElementsByClassName('movies-scifi')[0].style.display="none"; 
+                  mediaCarouselMovies = document.getElementsByClassName('movies-drama')[0].getElementsByClassName("media-carousel-movies");                               
+              }
+              if(selectedGenre == 'Sci-Fi'){
+                  document.getElementsByClassName('movies-action')[0].style.display="none";
+                  document.getElementsByClassName('movies-drama')[0].style.display="none";
+                  document.getElementsByClassName('movies-scifi')[0].style.display="block";
+                  mediaCarouselMovies = document.getElementsByClassName('movies-scifi')[0].getElementsByClassName("media-carousel-movies");
+              }                        
 
-                        
-                                var mediaCarouselMoviesCount = mediaCarouselMovies.length;
-                                
-                                for(var count = 0; count<mediaCarouselMoviesCount; count++){
-                                        if(mediaCarouselMovies[count].style.display == "block")
-                                                countMovies++;
-                                }
-                                console.log(countMovies);                                
-                        
-                                showNoResultsText(countMovies);
-                }
+              
+                      var mediaCarouselMoviesCount = mediaCarouselMovies.length;
+                      
+                      for(var count = 0; count<mediaCarouselMoviesCount; count++){
+                              if(mediaCarouselMovies[count].style.display == "block")
+                                      countMovies++;
+                      }
+                      console.log(countMovies);                                
+              
+                      showNoResultsText(countMovies);
+      }
         
         </script>
   </head>
@@ -233,9 +233,15 @@
         <a href="#" onclick="getMediaPosters(this.text)">Sci-Fi</a>
       </div>
     </div>
-    <div class="search-container">
+    <!-- <div class="search-container">
       <input type="text" placeholder="Search your favourite movie title" class="search" name="search" />
       <button class="sear" type="submit"><i class="fa fa-search"></i></button>
+    </div> -->
+    <div class="input-group mb-3 search-container">
+      <input type="text" style="background-color: rgb(248, 192, 113);color: black;" class="form-control search" placeholder="Search your favourite movie title" aria-label="Recipient's username" aria-describedby="basic-addon2">
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary sear" type="button"><i class="fa fa-search"></i></button>
+      </div>
     </div>
 
     <div class="fullcardmov">
